@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+:root{
+    --color: -webkit-linear-gradient(90deg, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+html,body{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--color);
+}
+::selection{
+  color: #fff;
+  background: #43AFFC;
+}
+.wrapper{
+  width: 535px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+}
+.wrapper header{
+  display: flex;
+  font-size: 21px;
+  font-weight: 500;
+  color: rgb(96, 178, 176);
+  padding: 16px 17px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+.wrapper header i{
+  cursor: pointer;
+  margin-right: 8px;
+  display: none;
+}
+.wrapper.active header i{
+  margin-left: 5px;
+  font-size: 30px;
+  display: flex;
+}
+.wrapper.active header i:hover{
+  color: rgb(121, 123, 123);
+}
+.wrapper .input-part{
+  margin: 20px 25px 30px;
+}
+.wrapper.active .input-part{
+  display: none;
+}
+.input-part .info-txt{
+  display: none;
+  font-size: 17px;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+.input-part .info-txt.error{
+  color: #721c24;
+  display: block;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+.input-part .info-txt.pending{
+  color: #0c5460;
+  display: block;
+  background: #d1ecf1;
+  border: 1px solid #bee5eb;
+}
+.input-part :where(input, button){
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 7px;
+}
+.input-part input{
+  text-align: center;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+}
+.input-part input:is(:focus, :valid){
+  border: 2px solid #393a39;
+}
+.input-part input::placeholder{
+  color: #bfbfbf;
+}
+.input-part .separator{
+  height: 1px;
+  width: 100%;
+  margin: 25px 0;
+  background: #ccc;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.separator::before{
+  content: "or";
+  color: #b3b3b3;
+  font-size: 19px;
+  padding: 0 15px;
+  background: #fff;
+}
+.input-part button{
+  color: #fff;
+  cursor: pointer;
+  background: rgb(96, 178, 176);
+  transition: 0.3s ease;
+}
+.input-part button:hover{
+  background: #1d9ffc;
+}
+.wrapper .weather-part{
+  display: none;
+  margin: 30px 0 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.wrapper.active .weather-part{
+  display: flex;
+}
+.weather-part img{
+  max-width: 90px;
+}
+.weather-part .temp{
+  display: flex;
+  font-weight: 500;
+  font-size: 72px;
+}
+.weather-part .temp .numb{
+  font-weight: 600;
+}
+.weather-part .temp .deg{
+  font-size: 40px;
+  font-weight: 700;
+  display: block;
+  margin: 10px 5px 0 0;
+}
+.weather-part .weather{
+  font-size: 21px;
+  text-align: center;
+  text-transform: capitalize;
+  margin: -5px 20px 15px;
+}
+.weather-part .location{
+  display: flex;
+  font-size: 19px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  align-items: flex-start;
+}
+.location i{
+  font-size: 22px;
+  margin: 4px 5px 0 0;
+}
+.weather-part .bottom-details{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+}
+.bottom-details .column{
+  display: flex;
+  width: 100%;
+  padding: 5px 0;
+  align-items: center;
+  justify-content: center;
+}
+.bottom-details .column.wind{
+  padding: 18px 0;
+}
+.bottom-details .column.pressure{
+  padding: 18px 0;
+}
+.bottom-details .column.wind i{
+  font-size: 41px;
+}
+.bottom-details .column.pressure i{
+  font-size: 41px;
+}
+.column i{
+  color: rgb(96, 178, 176);
+  font-size: 50px;
+  padding: 0 15px;
+}
+.column.humidity{
+  border-left: 1px solid #ccc;
+}
+.column.pressure{
+  border-left: 1px solid #ccc;
+}
+.humidity iconify-icon{
+  color: rgb(96, 178, 176);
+}
+.column .details{
+  margin-left: 3px;
+}
+.details .temp, .humidity span, .details .wind, .pressure span{
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: -3px;
+}
+.details .temp .deg{
+  margin: 0;
+  font-size: 17px;
+  padding: 0 2px 0 1px;
+}
+.column .details p{
+  font-size: 20px;
+  margin-top: -6px;
+}
+footer{
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  font-size: 13px;
+}
+footer p{
+  color: #b3b3b3;
+  padding-bottom: 5px;
+}
+footer p a{
+  color: white;
+  text-decoration: none;
+}
+footer span iconify-icon{
+  font-size: large;
+  color: white;
+}
+.partition{
+  height: 20px;
+  width: 2px;
+  background: #b3b3b3;
+  margin: 0 14px;
+}

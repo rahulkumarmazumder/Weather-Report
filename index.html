@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Report</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <i class="fa fa-angle-double-left" style="font-size:24px"></i>
+      <h3>Weather Report</h3>
+    </header>
+    <section class="input-part">
+      <p class="info-txt"></p>
+      <div class="content">
+        <input type="text" spellcheck="false" placeholder="Enter city name" required>
+        <div class="separator"></div>
+        <button>Get Device Location</button>
+      </div>
+    </section>
+    <section class="weather-part">
+      <img src="" alt="Weather Icon">
+      <div class="temp">
+        <span class="numb">13</span>
+        <span class="deg">°C</span>
+      </div>
+      <div class="weather">Broken Clouds</div>
+      <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Kolkata, India</span>
+      </div>
+      <div class="bottom-details">
+        <div class="column feels">
+          <i class="fa fa-thermometer-half" aria-hidden="true"></i>
+          <div class="details">
+            <div class="temp">
+              <span class="numb-2">17</span>
+              <span class="deg">°</span>C
+            </div>
+            <p>Feels like</p>
+          </div>
+        </div>
+        <div class="column humidity">
+          <iconify-icon icon="carbon:humidity" width="60" height="88"></iconify-icon>
+          <div class="details">
+            <span>90%</span>
+            <p>Humidity</p>
+          </div>
+        </div>
+      </div>
+      <!-- pressure and wind speed part -->
+      <div class="bottom-details">
+        <div class="column wind">
+          <i class="fa fa-duotone fa-wind" aria-hidden="true"></i>
+          <div class="details">
+            <div class="wind">
+              <span class="numb-2">17</span>
+              <span class="kmph">km/h</span>
+            </div>
+            <p>Wind Speed</p>
+          </div>
+        </div>
+        <div class="column pressure">
+          <i class="fa fa-duotone fa-arrows-down-to-line" aria-hidden="true"></i>
+          <div class="details">
+            <span>1000mbar</span>
+            <p>Pressure</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="footer">
+    <p class="source">Data provided by <a href="https://openweathermap.org/">OpenWeather</a></p>
+    <span><iconify-icon icon="mdi:weather-hazy"></iconify-icon></span>
+    <div class="partition"></div>
+    <p>Developed by <span><a href="https://www.linkedin.com/in/rahul-kumar-mazumder-084117230/">Rahul Kumar Mazumder</a></span></p>
+  </footer>
+  <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
